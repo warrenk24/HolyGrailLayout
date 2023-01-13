@@ -1,10 +1,12 @@
 *,*::before,*::after {
     box-sizing: border-box;
-}
-
-body {
     margin: 0;
     padding: 0;
+}
+html {
+  font-family: var(--ff);
+font-size: 16px;
+    color: var(--primary-clr);
 }
 
 :root {
@@ -22,6 +24,13 @@ body {
     --inner-main-clr: rgba(255, 122, 0);
     --inner-aside-clr: rgba(225, 122, 0, 0.4);
     --inner-footer-clr: rgba(225, 122, 0, 0.7);
+}
+header,footer {
+    background-color: var(--primary-clr);
+    color: var(--link-clr);
+}
+a {
+    color: var(--link-clr);
 }
 
 /* Outer Grid **********/
@@ -47,10 +56,38 @@ body {
 }
 
 header {
-    background-color: var(--outer-header-clr);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
     grid-area: al-header;
 }
+.left-header {
+    display: flex;
+    align-items: center;
+}
 
+header .fa-bars {
+    margin-right: 10px;
+}
+header .fa-bars:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.right-header {
+    display: flex;
+}
+.header-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header-link i {
+    font-size: 0.8rem;
+}
 nav {
     background-color: var(--outer-nav-clr);
     grid-area: al-nav;
@@ -58,6 +95,7 @@ nav {
 /* Inner Grid **********/
 
 .inner-grid {
+    overflow-y: scroll;
     background-color: var(--outer-main-area);
     grid-area: al-inner-grid;
     display: grid;
@@ -73,6 +111,7 @@ nav {
 main {
 grid-area: al-main;
 background-color: var(--inner-main-clr);
+
 }
 
 aside {
@@ -83,7 +122,7 @@ aside {
 
 footer {
     grid-area: al-footer;
-    background-color: var(--inner-footer-clr);
+   
 }
 
 /* Media **********/
