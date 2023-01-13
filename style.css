@@ -15,4 +15,44 @@ body {
 
     --primary-clr: #1e4040;
     --link-clr: #71d99e;
+    --outer-header-clr: rgba(0, 31, 255, 0.5);
+    --outer-nav-clr: rgba(0, 31, 255, 0.8);
+    --outer-main-area: rgba(0, 31, 255, 0.2);
+}
+
+/* Outer Grid **********/
+.outer-grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 70px 1fr;
+    grid-template-areas: 
+    "al-header al-header"
+    "al-inner-grid al-inner-grid";
+    
+}
+
+.outer-grid-navDisplay {
+    grid-template-areas: 
+    "al-header al-header"
+    "al-nav al-inner-grid";
+}
+
+.hide-nav {
+    display: none;
+}
+
+header {
+    background-color: var(--outer-header-clr);
+    grid-area: al-header;
+}
+
+nav {
+    background-color: var(--outer-nav-clr);
+    grid-area: al-nav;
+}
+
+.inner-grid {
+    background-color: var(--outer-main-area);
+    grid-area: al-inner-grid;
 }
