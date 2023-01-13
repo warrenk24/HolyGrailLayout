@@ -56,3 +56,28 @@ nav {
     background-color: var(--outer-main-area);
     grid-area: al-inner-grid;
 }
+
+/* Media **********/
+
+@media (min-width: 576px) {
+    nav {
+        display: block !important;
+    }
+    .outer-grid {
+        grid-template-areas: 
+        "al-header al-header"
+        "al-nav al-inner-grid";
+    }
+      header .fa-bars {
+        display: none;
+        
+    }
+}
+
+@media (min-width: 992px) {
+    
+}
+
+@media (min-width: 1440px) {
+    
+}
