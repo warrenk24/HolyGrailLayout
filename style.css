@@ -18,6 +18,10 @@ body {
     --outer-header-clr: rgba(0, 31, 255, 0.5);
     --outer-nav-clr: rgba(0, 31, 255, 0.8);
     --outer-main-area: rgba(0, 31, 255, 0.2);
+
+    --inner-main-clr: rgba(255, 122, 0);
+    --inner-aside-clr: rgba(225, 122, 0, 0.4);
+    --inner-footer-clr: rgba(225, 122, 0, 0.7);
 }
 
 /* Outer Grid **********/
@@ -51,10 +55,35 @@ nav {
     background-color: var(--outer-nav-clr);
     grid-area: al-nav;
 }
+/* Inner Grid **********/
 
 .inner-grid {
     background-color: var(--outer-main-area);
     grid-area: al-inner-grid;
+    display: grid;
+    grid-template-rows: 1fr auto 60px;
+    grid-template-columns:  1fr;
+    grid-template-areas: 
+    "al-main al-main"
+    "al-aside al-aside"
+    "al-footer al-footer";
+    
+}
+
+main {
+grid-area: al-main;
+background-color: var(--inner-main-clr);
+}
+
+aside {
+    grid-area: al-aside;
+    background-color: var(--inner-aside-clr);
+   
+}
+
+footer {
+    grid-area: al-footer;
+    background-color: var(--inner-footer-clr);
 }
 
 /* Media **********/
@@ -75,6 +104,15 @@ nav {
 }
 
 @media (min-width: 992px) {
+    .inner-grid {
+   
+    grid-template-rows: 1fr 60px;
+    grid-template-columns: minmax(auto, 700px) 1fr;
+    grid-template-areas: 
+    "al-main al-aside"
+    "al-footer al-footer";
+    
+    }
     
 }
 
