@@ -156,5 +156,27 @@ footer {
 }
 
 @media (min-width: 1440px) {
+    .outer-grid {
+        grid-template-columns: 1fr 950px 1fr;
+        grid-template-areas: 
+        "al-header al-header al-header"
+        "al-nav al-inner-grid al-inner-grid";
+    }
+    header {
+        display: grid;
+        grid-template-columns: 1fr 950px 1fr;
+        grid-template-areas: "al-leftH . al-rightH";
+   
+
+    }
+    .left-header {
+        grid-area: al-leftH;
+        justify-self: end;
+
+    }
+    .right-header {
+        grid-area: al-rightH;
+        justify-self: start;
+    }
     
 }
