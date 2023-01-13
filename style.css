@@ -1,0 +1,18 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+   --ff:  font-family: 'Dosis', sans-serif;
+
+   --fw-n: 400;
+   --fw-b: 700;
+
+    --primary-clr: #1e4040;
+    --link-clr: #71d99e;
+}
